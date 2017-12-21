@@ -53,7 +53,7 @@ func TestSchedulesService_List(t *testing.T) {
 
 	want := &Schedules{Schedules: []*Schedule{(&Schedule{ID: "SCHED1", Name: "Schedule 1"})}, Limit: 100, Offset: 0, Total: 1}
 	if !reflect.DeepEqual(schedules, want) {
-		t.Errorf("Schedules.List returned %+v, want %%+v", schedules, want)
+		t.Errorf("Schedules.List returned %+v, want %+v", schedules, want)
 	}
 }
 
@@ -75,7 +75,7 @@ func TestSchedulesService_Get(t *testing.T) {
 		{Name: "Schedule Layer 1", Users: []*OrderedUser{{Order: 1, User: User{ID: "GHIJK", Name: "User Name"}}}},
 	}}
 	if !reflect.DeepEqual(schedule, want) {
-		t.Errorf("Schedules.Get returned %+v, want %%+v", schedule, want)
+		t.Errorf("Schedules.Get returned %+v, want %+v", schedule, want)
 	}
 }
 
@@ -95,6 +95,6 @@ func TestSchedulesService_Entries(t *testing.T) {
 
 	want := &ScheduleEntries{ScheduleEntries: []*ScheduleEntry{(&ScheduleEntry{User: &User{ID: "USR1", Name: "Test User"}, Start: "2012-08-19T00:00:00-04:00", End: "2012-08-19T12:00:00-04:00"})}, Total: 1}
 	if !reflect.DeepEqual(entries, want) {
-		t.Errorf("Schedules.Entries returned %+v, want %%+v", entries, want)
+		t.Errorf("Schedules.Entries returned %+v, want %+v", entries, want)
 	}
 }
